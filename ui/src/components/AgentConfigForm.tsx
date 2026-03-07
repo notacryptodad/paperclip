@@ -610,7 +610,7 @@ export function AgentConfigForm(props: AgentConfigFormProps) {
                           ? "agent"
                         : adapterType === "opencode_local"
                           ? "opencode"
-                        : adapterType === "acp"
+                        : adapterType === "acp" || adapterType === "kiro_cli"
                           ? "kiro-cli"
                           : "claude"
                     }
@@ -907,7 +907,7 @@ function AdapterEnvironmentResult({ result }: { result: AdapterEnvironmentTestRe
 
 /* ---- Internal sub-components ---- */
 
-const ENABLED_ADAPTER_TYPES = new Set(["claude_local", "codex_local", "opencode_local", "cursor", "acp"]);
+const ENABLED_ADAPTER_TYPES = new Set(["claude_local", "codex_local", "opencode_local", "cursor", "acp", "kiro_cli"]);
 
 /** Display list includes all real adapter types plus UI-only coming-soon entries. */
 const ADAPTER_DISPLAY_LIST: { value: string; label: string; comingSoon: boolean }[] = [

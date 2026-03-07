@@ -30,6 +30,7 @@ export const AGENT_ADAPTER_TYPES = [
   "cursor",
   "openclaw",
   "acp",
+  "kiro_cli",
 ] as const;
 export type AgentAdapterType = (typeof AGENT_ADAPTER_TYPES)[number];
 

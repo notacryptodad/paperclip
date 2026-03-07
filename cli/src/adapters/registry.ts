@@ -8,6 +8,11 @@ import { processCLIAdapter } from "./process/index.js";
 import { httpCLIAdapter } from "./http/index.js";
 import { acpCLIAdapter } from "./acp/index.js";
 
+const kiroCliCLIAdapter: CLIAdapterModule = {
+  type: "kiro_cli",
+  formatStdoutEvent: acpCLIAdapter.formatStdoutEvent,
+};
+
 const claudeLocalCLIAdapter: CLIAdapterModule = {
   type: "claude_local",
   formatStdoutEvent: printClaudeStreamEvent,
@@ -34,7 +39,7 @@ const openclawCLIAdapter: CLIAdapterModule = {
 };
 
 const adaptersByType = new Map<string, CLIAdapterModule>(
-  [claudeLocalCLIAdapter, codexLocalCLIAdapter, openCodeLocalCLIAdapter, cursorLocalCLIAdapter, openclawCLIAdapter, processCLIAdapter, httpCLIAdapter, acpCLIAdapter].map((a) => [a.type, a]),
+  [claudeLocalCLIAdapter, codexLocalCLIAdapter, openCodeLocalCLIAdapter, cursorLocalCLIAdapter, openclawCLIAdapter, processCLIAdapter, httpCLIAdapter, acpCLIAdapter, kiroCliCLIAdapter].map((a) => [a.type, a]),
 );
 
 export function getCLIAdapter(type: string): CLIAdapterModule {

@@ -24,9 +24,10 @@ const adapterLabels: Record<string, string> = {
   process: "Process",
   http: "HTTP",
   acp: "ACP (stdio)",
+  kiro_cli: "Kiro CLI (local)",
 };
 
-const ENABLED_INVITE_ADAPTERS = new Set(["claude_local", "codex_local", "opencode_local", "cursor", "acp"]);
+const ENABLED_INVITE_ADAPTERS = new Set(["claude_local", "codex_local", "opencode_local", "cursor", "acp", "kiro_cli"]);
 
 function dateTime(value: string) {
   return new Date(value).toLocaleString();
